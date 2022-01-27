@@ -76,21 +76,19 @@ const root = new Vue({
             }
         },
 
-        reversePic() {
-            if (this.currentIndex < 0) {
-                images.lenght--;
-            }
-        },
 
+        //#FUNZIONE PER FAR SCORRERE AUTOMATICAMENTE LE IMMAGINI
         autoPlay() {
             this.autoplay = setInterval(this.nextPic, 3000)
         },
 
+        //FUNZIONE PER FERMARE LO SCORRIMENTO DELLE IMMAGINI
         stopAutoPlay() {
             clearInterval(this.autoplay)
         }
     },
 
+    //IMPOSTO L'AUTOPLAY
     created() {
         this.autoPlay();
     }
