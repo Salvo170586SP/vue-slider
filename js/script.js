@@ -61,6 +61,7 @@ const root = new Vue({
             }
         },
 
+        //#FUNZIONE BOTTONE ATTIVO SULL'IMMAGINE CORRENTE
         isActive(index){
             if(this.currentIndex === index){
                 return true;
