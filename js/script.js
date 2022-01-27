@@ -46,7 +46,7 @@ const root = new Vue({
         //*BOTTONE INDIETRO
         prevPic() {
             if (this.currentIndex === 0) {
-                this.currentIndex = this.currentIndex.lenght - 1;
+                this.currentIndex = this.images.length - 1;
 
             } else {
                 this.currentIndex--;
@@ -55,18 +55,18 @@ const root = new Vue({
 
         //*BOTTONE AVANTI
         nextPic() {
-            if (this.currentIndex !== 0) {
-                this.currentIndex = this.currentIndex + 1;
+            if (this.currentIndex === this.images.length -1) {
+                this.currentIndex = 0;
             } else {
                 this.currentIndex++;
             }
         },
 
         //*SELEZIONA I PALLINI 
-        shotPic(index){
+        shotPic(index) {
             this.currentIndex = index
         },
-        
+
         //#FUNZIONE BOTTONE ATTIVO SULL'IMMAGINE CORRENTE
         isActive(index) {
             if (this.currentIndex === index) {
@@ -82,11 +82,11 @@ const root = new Vue({
             }
         },
 
-        autoPlay(){
-           this.autoplay = setInterval(this.nextPic ,3000)
+        autoPlay() {
+            this.autoplay = setInterval(this.nextPic, 3000)
         },
 
-        stopAutoPlay(){
+        stopAutoPlay() {
             clearInterval(this.autoplay)
         }
     },
