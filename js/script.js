@@ -55,21 +55,31 @@ const root = new Vue({
         //*BOTTONE AVANTI
         nextPic() {
             if (this.currentIndex !== 0) {
-                this.currentIndex = this.currentIndex +1;
+                this.currentIndex = this.currentIndex + 1;
             } else {
                 this.currentIndex++;
             }
         },
 
+        //*SELEZIONA I PALLINI 
+        shotPic(index){
+            this.currentIndex = index
+        },
+        
         //#FUNZIONE BOTTONE ATTIVO SULL'IMMAGINE CORRENTE
-        isActive(index){
-            if(this.currentIndex === index){
+        isActive(index) {
+            if (this.currentIndex === index) {
                 return true;
-            }else{
+            } else {
                 return false
             }
-        } 
+        },
 
+        reversePic() {
+            if (this.currentIndex < 0) {
+                images.lenght--;
+            }
+        }
 
     }
 
