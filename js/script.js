@@ -31,7 +31,7 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
-        
+        istrue: true,
         currentIndex: 0,
         images: [
             'images/image1.jpg',
@@ -59,7 +59,15 @@ const root = new Vue({
             } else {
                 this.currentIndex++;
             }
-        }
+        },
+
+        isActive(index){
+            if(this.currentIndex === index){
+                return true;
+            }else{
+                return false
+            }
+        } 
     }
 
 }); 
