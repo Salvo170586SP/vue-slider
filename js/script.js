@@ -31,7 +31,6 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
-        istrue: true,
         currentIndex: 0,
         images: [
             'images/image1.jpg',
@@ -47,6 +46,7 @@ const root = new Vue({
         prevPic() {
             if (this.currentIndex === 0) {
                 this.currentIndex = this.currentIndex.lenght - 1;
+
             } else {
                 this.currentIndex--;
             }
@@ -55,7 +55,7 @@ const root = new Vue({
         //*BOTTONE AVANTI
         nextPic() {
             if (this.currentIndex !== 0) {
-                this.currentIndex = this.currentIndex;
+                this.currentIndex = this.currentIndex +1;
             } else {
                 this.currentIndex++;
             }
@@ -69,6 +69,8 @@ const root = new Vue({
                 return false
             }
         } 
+
+
     }
 
 }); 
