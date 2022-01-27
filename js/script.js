@@ -31,6 +31,7 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
+        autoplay: null,
         currentIndex: 0,
         images: [
             'images/image1.jpg',
@@ -82,7 +83,11 @@ const root = new Vue({
         },
 
         autoPlay(){
-            setInterval(this.nextPic ,3000)
+           this.autoplay = setInterval(this.nextPic ,3000)
+        },
+
+        stopAutoPlay(){
+            clearInterval(this.autoplay)
         }
     },
 
