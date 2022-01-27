@@ -79,8 +79,14 @@ const root = new Vue({
             if (this.currentIndex < 0) {
                 images.lenght--;
             }
+        },
+
+        autoPlay(){
+            setInterval(this.nextPic ,3000)
         }
+    },
 
+    created() {
+        this.autoPlay();
     }
-
 }); 
