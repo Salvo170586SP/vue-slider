@@ -25,12 +25,9 @@
         </div>
         <div class="col-6">
           <div class="slider d-flex align-items-center">
-            <img v-for="(image, index) in images" v-if="currentIndex === images[index]" class="img-fluid" v-bind:src="images[index]"/>
+            <img v-for="(image, index) in images" v-if="currentIndex === index" class="img-fluid" v-bind:src="image"/>
             <div class="slider-dots">
-              <div class="dot mx-2 active"></div>
-              <div class="dot mx-2"></div>
-              <div class="dot mx-2"></div>
-              <div class="dot mx-2"></div>
+              <div class="dot mx-2" active></div>
             </div> 
           </div>
         </div>
