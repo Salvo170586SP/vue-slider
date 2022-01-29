@@ -44,13 +44,21 @@ const root = new Vue({
     methods: {
 
         //*BOTTONE INDIETRO
-        prevPic() {  
-            this.currentIndex--; //per scorrere la lista indietro
+        prevPic() {
+            if (this.currentIndex === 0) {
+                this.currentIndex = this.images.length - 1;
+            } else {
+                this.currentIndex--; //per scorrere la lista indietro
+            }
         },
 
         //*BOTTONE AVANTI
         nextPic() {
-             this.currentIndex++;   //per scorrere la lista in avanti
+            if (this.currentIndex === this.images.length - 1) {
+                this.currentIndex = 0
+            } else {
+                this.currentIndex++; //per scorrere la lista in avanti
+            }
         },
 
         //*SELEZIONA I PALLINI 
@@ -66,6 +74,7 @@ const root = new Vue({
                 return false
             }
         },
+
 
 
         //#FUNZIONE PER FAR SCORRERE AUTOMATICAMENTE LE IMMAGINI
