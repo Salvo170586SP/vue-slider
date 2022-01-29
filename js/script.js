@@ -44,22 +44,13 @@ const root = new Vue({
     methods: {
 
         //*BOTTONE INDIETRO
-        prevPic() {
-            if (this.currentIndex === 0) {
-                this.currentIndex = this.images.length - 1;
-
-            } else {
-                this.currentIndex--;
-            }
+        prevPic() {  
+            this.currentIndex--; //per scorrere la lista indietro
         },
 
         //*BOTTONE AVANTI
         nextPic() {
-            if (this.currentIndex === this.images.length -1) {
-                this.currentIndex = 0;
-            } else {
-                this.currentIndex++;
-            }
+             this.currentIndex++;   //per scorrere la lista in avanti
         },
 
         //*SELEZIONA I PALLINI 
